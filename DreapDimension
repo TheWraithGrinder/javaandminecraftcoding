@@ -17,5 +17,9 @@ public class DreapDimension {
 	public static void init(FMLInitializationEvent event) {
 		
     oreReapconium = new BlockOreReapconium(160).setUnlocalizedName("orereapconium");
+    
+    GameRegistry.registerBlock(oreReapconium, "oreReapconium");
+    
+    LanguageRegistry.addName(oreReapconium, "Reapconium Ore")'
 	}
 }
