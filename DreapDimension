@@ -1,9 +1,13 @@
 package dreapcorps.dreapdimension;
 
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = DreapDimension.modid, name = "Dreap Dimension", version = "1.0.0")
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
@@ -12,14 +16,20 @@ public class DreapDimension {
   public static final String modid = "dreapdimension";
   
   public static Block oreReapconium;
-	
+  
+  public static Item ingotReapconium;
+
 	@Init
 	public static void init(FMLInitializationEvent event) {
-		
-    oreReapconium = new BlockOreReapconium(160).setUnlocalizedName("orereapconium");
-    
-    GameRegistry.registerBlock(oreReapconium, "oreReapconium");
-    
-    LanguageRegistry.addName(oreReapconium, "Reapconium Ore")'
+
+	    oreReapconium = new BlockOreReapconium(160).setUnlocalizedName("orereapconium");
+	    
+	    ingotReapconium = new ItemIngotReapconium(5000).setUnlocalizedName("ingotreapconium");
+	    
+	    GameRegistry.registerBlock(oreReapconium, "oreReapconium");
+	    
+	    LanguageRegistry.addName(oreReapconium, "Reapconium Ore");
+	    
+	    LanguageRegistry.addName(ingotReapconium, "Reapconium Ingot");
 	}
 }
