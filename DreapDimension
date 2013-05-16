@@ -1,0 +1,21 @@
+package dreapcorps.dreapdimension;
+
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.Init;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.network.NetworkMod;
+
+@Mod(modid = DreapDimension.modid, name = "Dreap Dimension", version = "1.0.0")
+@NetworkMod(clientSideRequired = true, serverSideRequired = false)
+public class DreapDimension {
+
+  public static final String modid = "dreapdimension";
+  
+  public static Block oreReapconium;
+	
+	@Init
+	public static void init(FMLInitializationEvent event) {
+		
+    oreReapconium = new BlockOreReapconium(160).setUnlocalizedName("orereapconium");
+	}
+}
